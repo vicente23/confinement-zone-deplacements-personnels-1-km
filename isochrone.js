@@ -1,7 +1,4 @@
-//// Documentation 
-// https://docs.mapbox.com/mapbox-gl-js/api/
-
-// Ajout de la carte
+// Add the map
 mapboxgl.accessToken = 'pk.eyJ1IjoidmljZW50ZTIzIiwiYSI6ImNqZTN6M2xueTY0engyeXAyazZsc2I4YXoifQ.bsCjmMr5GNd5A7POOaS_pw'; // Ajout d'un token
 const map = new mapboxgl.Map({
   container: 'map', // container id (déclaré dans le fichier html)
@@ -50,57 +47,6 @@ for (var i = 0; i < inputs.length; i++) {
 };
 
 
-// Change the direction of the arrows and the tooltip on the button
-function changeArrow() {
-  var elem = document.getElementById('button-panel');
-  var elem_transform = getComputedStyle(elem).getPropertyValue("transform");
-  // console.log(elem_transform)
-
-  if (elem_transform === 'matrix(1, 0, 0, 1, 0, 0)') {
-    elem_transform = 'matrix(-1, 1.22465e-16, -1.22465e-16, -1, 0, 0)';
-    elem.style.transform = elem_transform;
-    // elem.title = 'Déplier';
-    // content title = '' puis je change la valeur du title de bootstrap
-    elem.title = '';
-    $('[data-toggle="tooltip"][id="button-panel"]').attr("data-original-title", "Déplier");
-  } else if (elem_transform === 'matrix(-1, 1.22465e-16, -1.22465e-16, -1, 0, 0)') {
-    elem_transform = 'matrix(1, 0, 0, 1, 0, 0)';
-    elem.style.transform = elem_transform;
-    // elem.title = 'Replier';
-    elem.title = '';
-    $('[data-toggle="tooltip"][id="button-panel"]').attr("data-original-title", "Replier");
-  };
-};
-
-
-// Display or hide the panel and move the button panel
-function changePanel() {
-  var elem_tooltip_button = $('[data-toggle="tooltip"][id="button-panel"]').attr("data-original-title");
-  var elem_panel = document.getElementById('collapse-sidepanel');
-  var elem_button_panel = document.getElementById('button-panel');
-  var elem_main_title_panel = document.getElementById('collapse-sidepanel-main-title');
-  var elem_geocoder_panel = document.getElementById('geocoder');
-  // var elem_height = getComputedStyle(elem_panel).getPropertyValue("left");
-  // console.log(elem.clientWidth);
-  // console.log(document.documentElement.clientWidth);
-
-  if (elem_tooltip_button === 'Déplier') {
-    // console.log("Panel caché");
-    elem_panel.style.width = '0%';
-    // elem_button_panel.setAttribute('style', 'left: 2%');
-    elem_button_panel.style.left = '0.4%';
-    elem_main_title_panel.style.display = 'none';
-    elem_geocoder_panel.style.display = 'none';
-  } else if (elem_tooltip_button === 'Replier') {
-    // console.log("Panel ouvert");
-    elem_button_panel.style.left = '26%';
-    elem_panel.style.width = '25%';
-    elem_main_title_panel.style.display = 'block';
-    elem_geocoder_panel.style.display = 'block';
-  };
-};
-
-
 // Géocodeur addition
 var geocoder = new MapboxGeocoder({ // Initialize the geocoder
   accessToken: mapboxgl.accessToken, // Set the access token
@@ -140,15 +86,8 @@ map.on('load', function () {
 
   geocoder.on('result', function (e) {
     map.getSource('single-point').setData(e.result.geometry);
-    // console.log(map.getSource('single-point'));
-    // console.log(e.result);
-    // console.log(e.result.geometry);
-    // console.log(e.result.geometry.coordinates[0]);
 
-    // // Create variables to use in getIso()
     var urlBase = 'https://api.mapbox.com/isochrone/v1/mapbox/';
-    // var lon = -0.602;
-    // var lat = 44.817;
     var lon = e.result.geometry.coordinates[0];
     var lat = e.result.geometry.coordinates[1];
     var profile = 'walking';
@@ -170,13 +109,6 @@ map.on('load', function () {
     var marker = new mapboxgl.Marker({
       'color': '#314ccd'
     });
-
-    // Create a LngLat object to use in the marker initialization
-    // https://docs.mapbox.com/mapbox-gl-js/api/#lnglat
-    var lngLat = {
-      lon: lon,
-      lat: lat
-    };
 
     try {
       map.removeLayer('isoLayer');
@@ -206,24 +138,9 @@ map.on('load', function () {
       }
     }, "poi-label");
 
-    // Initialize the marker at the query coordinates
-    // marker.setLngLat(lngLat).addTo(map);
-
     // Make the API call
     getIso();
 
   });
-
 });
 
-
-
-// if (elem.style.background === "url('img/arrow-left.svg') no-repeat top left") {
-//     elem.style.background = "url('img/arrow-right.svg') no-repeat top left";
-//     } else { 
-//         elem.style.background = "url('img/arrow-left.svg') no-repeat top left";
-//     };
-
-    // document.getElementById("button-panel").addEventListener("click", (event) => {
-    //     event.currentTarget.classList.toggle("button-panel2")
-    // });

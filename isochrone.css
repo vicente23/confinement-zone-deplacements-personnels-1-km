@@ -86,38 +86,7 @@ label {
 /* FIN BOUTON MENU FONDS DE CARTE */
 
 
-/* DEBUT BOUTON PANEL */
-/* Button */
-#button-panel {
-  position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
-  left: 26%;
-  top: 1%; 
-  border-radius: 4px; 
-  border: solid 1.5px rgba(134, 134, 134, 0.3); 
-  background-image: url('img/arrow-left.svg');
-  background-size: contain; 
-  background-size: 65%;
-  background-position: center; 
-  background-repeat: no-repeat;
-  background-color: #ffffff;
-  margin: 6px 5px; 
-  cursor: pointer; 
-  z-index: 1;
-  transform: rotate(0deg);
-}
-
-#button-panel:focus {
-  outline: none;
-}
-
-#button-panel:hover {
-  content: '';
-  background-color: rgba(245, 245, 245, 1);
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
-}
-
+/* DEBUT PANEL */
 /* Panel */
 .collapse-sidepanel {
   position: absolute;
@@ -125,7 +94,7 @@ label {
   left: 0.8%;
   width: 25%;
   height: 9vw;
-  min-height: 10vw;
+  /* min-height: 10vw; */
   z-index: 1;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 10px;
@@ -159,22 +128,13 @@ label {
   border: solid 1.2px;
   border-color: rgb(102, 101, 101);
   box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
-  height: 4vw;
+  height: 3.4vw;
   top: 0.4vw;
   min-width: 100%;
-  text-align: center;
-  vertical-align: middle;
   /* min-height: 100%; */
   font-size: 1.2vw;
   }
-
-  /* .mapboxgl-ctrl-geocoder--icon-close {
-    width: 10vw;
-    height: 10vw;
-    margin-top: 8px;
-    margin-right: 3px;
-  } */
-/* FIN BOUTON PANEL */
+/* FIN PANEL */
 
 
 /* DEBUT TOOLTIP BOOTSTRAP */

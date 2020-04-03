@@ -21,9 +21,6 @@
     <title>Zone de confinement</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
-    <!-- Téléchargement du js de mapbox via le lien précédent et modification pour les valeurs du hover navigation controle -->
-    <!-- <script src= "mapbox.js"></script> -->
-    <!-- Geocoder avec mapbox -->
     <script
         src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
     <link rel='stylesheet'
@@ -40,14 +37,12 @@
     <!-- Ajout d'une div pour la carte -->
     <div id="map"></div>
 
-
     <!-- Ajout d'une div pour les fonds de carte : dropdown lorsqu'on passe la souris sur le bouton -->
     <div class="dropdown">
         <button class="dropdown-button" disabled></button>
         <div class="dropdown-content">
             <p class="mb-1 pl-3 pt-2 font-weight-bold" style="color: rgb(51, 51, 51)">Fonds de carte :</p>
             <div id="dropdown-menu">
-                <!-- Utilisation des classes bootstrap -->
                 <div class="d-flex justify-content-start align-items-center dropdown-content-list">
                     <input class="ml-2" type="radio" id="outdoors-v11" name="backgroundMap" value="outdoors"
                         checked='checked'>
@@ -77,12 +72,6 @@
         </div>
     </div>
 
-
-    <!-- Ajout d'une div pour le bouton du panel : utilisation d'une tooltip de bootstrap -->
-    <div class="button-collapse-sidepanel">
-        <button onclick="changeArrow();changePanel()" id="button-panel" data-toggle="tooltip" data-placement="bottom"
-            title="Replier"></button>
-    </div>
     <!-- Ajout d'une div pour le panel -->
     <div class="collapse-sidepanel" id="collapse-sidepanel">
         <p id="collapse-sidepanel-main-title">Calcul d'une isodistance de 1km</p>
@@ -120,18 +109,12 @@
                         écran.</p>
                     <p class="modal-body-paragraphe-no-margin">Vous avez la possibilité de changer le fond d'écran à
                         l'aide du bouton situé en haut à droite.</p>
-                    <p class="modal-body-paragraphe-no-margin">Vous pouvez également zoomer et dézoomer et tester
-                        d'autres fonctionnalités en utilisant les boutons sur la partie de droite.</p>
-                    <p class="modal-body-paragraph-no-margin">Retrouvez ces informations à l'aide du bouton situé en bas à
+                    <p class="modal-body-paragraphe-no-margin">Retrouvez ces informations à l'aide du bouton situé en bas à
                         gauche.</p>
-                    <p class="modal-body-paragraph-no-margin"><b>Une utilisation sur tablette ou ordinateur est fortement recommandée.</b></p>
-                    <!-- <p class="modal-body-paragraphe-no-margin">Pour calculer l'isodistance de 1km, vous pouvez procéder de deux façons:</p>
-                    <ol class="modal-body-paragraphe">
-                        <li><b>Recherchez une adresse</b> à partir de la barre de recherche puis cliquez sur le bouton <b>Calculer l'isodistance</b></li>
-                        <li class="modal-body-paragraphe">Cliquez sur le bouton <b>Sélectionner un point sur la carte</b> puis <b>cliquez sur la position souhaitée</b> sur la carte</li>
-                    </ol> -->
+                    <p class="modal-body-paragraphe"><b>Une utilisation sur tablette ou ordinateur est fortement recommandée.</b></p>
+
                     <h6 class="modal-body-h6">Développeur de l'application</h6>
-                    <p class="modal-body-paragraphe">Vincent BRÉ</p>
+                    <p class="modal-body-paragraphe">Vincent BRÉ - <a href="https://www.linkedin.com/in/vincent-bré-782567167/">Mon Linkedin</a></p>
                 </div>
 
             </div>
@@ -139,9 +122,6 @@
     </div>
 
 
-    <!-- Source du code javascript -->
-    <!-- https://w3schoolsrus.github.io/howto/tryit093e.html?filename=tryhow_js_collapse_sidebar -->
-    <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -150,11 +130,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-    <!-- Open my modal by default -->
     <!-- <script>
         $('#modal-informations').modal('show');
     </script> -->
-    <!-- Fonction pour les tooltips -->
     <script>
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip({
