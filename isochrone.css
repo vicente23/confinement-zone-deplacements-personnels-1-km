@@ -118,6 +118,7 @@ label {
   z-index: 1;
   left: 1.4vw;
   width: 90%;
+  margin-top: 5px;
   /* height: 2vw; */
   /* top: 2vw; */
   /* top: 3vw; */
@@ -134,7 +135,7 @@ label {
   top: 0.4vw;
   min-width: 100%;
   /* min-height: 100%; */
-  font-size: 1.2vw;
+  font-size: 1vw;
   }
 /* FIN PANEL */
 
