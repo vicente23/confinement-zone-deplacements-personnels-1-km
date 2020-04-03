@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+
+#map { 
+  position: absolute; 
+  top: 0; 
+  bottom: 0; 
+  width: 100%; 
+  z-index: 0;
+ }
+
+label {
+  margin-bottom: 0;
+}
+
+
+/* BOUTON ZOOM ROTATION MAPBOX */
+/* Changer la position des boutons de zoom et de rotation de Mapbox */
+.mapboxgl-ctrl-top-right {
+    top: 8.7%;
+    right: 0.1%;
+}
+/* FIN BOUTON ZOOM ROTATION MAPBOX */
+
+
+/* BOUTON MENU FONDS DE CARTE */
+/* Dropdown Button */
+.dropdown-button {
+    position: relative;
+    display: inline-block;
+    background: url("img/layers.svg") no-repeat top left;
+    background-size: contain; 
+    background-size: 75%;
+    background-position: center;
+    background-color: #ffffff;
+    /* margin: 6px 16px;  */
+    padding: 25px; 
+    /* right: 0; */
+    /* left: 90%; */
+    border-radius: 10px; 
+    border: solid 1.5px rgba(134, 134, 134, 0.3); 
+    cursor: pointer; 
+  }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: absolute;
+    /* display: inline-block; */
+    /* padding-right: 10px; */
+    margin: 7px 7px; 
+    /* right: 0; */
+    right: 0%;
+    z-index:1;
+  }
+  
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    left:-203%;
+    top: 1%;
+  } 
+
+/* Dropdown Content List */
+.dropdown-content-list {
+    padding: 5px 0px 10px 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+  
+/* Change the background color of the dropdown button when the dropdown content is shown */ 
+.dropdown:hover .dropdown-button {background-color: rgba(247, 247, 247, 0.9);} 
+/* FIN BOUTON MENU FONDS DE CARTE */
+
+
+/* DEBUT BOUTON PANEL */
+/* Button */
+#button-panel {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  left: 26%;
+  top: 1%; 
+  border-radius: 4px; 
+  border: solid 1.5px rgba(134, 134, 134, 0.3); 
+  background-image: url('img/arrow-left.svg');
+  background-size: contain; 
+  background-size: 65%;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  margin: 6px 5px; 
+  cursor: pointer; 
+  z-index: 1;
+  transform: rotate(0deg);
+}
+
+#button-panel:focus {
+  outline: none;
+}
+
+#button-panel:hover {
+  content: '';
+  background-color: rgba(245, 245, 245, 1);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+}
+
+/* Panel */
+.collapse-sidepanel {
+  position: absolute;
+  top: 1.2%; 
+  left: 0.8%;
+  width: 25%;
+  height: 9vw;
+  min-height: 10vw;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+}
+
+#collapse-sidepanel-main-title {
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 1.5vw;
+  text-align: center;
+  margin: 6px;
+  /* margin-top: 9px; */
+  color: rgb(71, 71, 71);
+  z-index: 1;
+}
+
+.geocoder {
+  position: absolute;
+  z-index: 1;
+  left: 1.4vw;
+  width: 90%;
+  /* top: 2vw; */
+  /* top: 3vw; */
+  /* box-shadow: 0px 0px 0px 0px rgba(0,0,0,0); */
+  /* font-size: 4px; */
+  }
+
+
+.mapboxgl-ctrl-geocoder {
+  border: solid 1.2px;
+  border-color: rgb(102, 101, 101);
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
+  height: 4vw;
+  top: 0.4vw;
+  min-width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  /* min-height: 100%; */
+  font-size: 1.2vw;
+  }
+
+  /* .mapboxgl-ctrl-geocoder--icon-close {
+    width: 10vw;
+    height: 10vw;
+    margin-top: 8px;
+    margin-right: 3px;
+  } */
+/* FIN BOUTON PANEL */
+
+
+/* DEBUT TOOLTIP BOOTSTRAP */
+.tooltip-inner {
+  background-color: rgb(81, 81, 81);
+}
+
+.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: rgb(81, 81, 81);
+}
+
+.bs-tooltip-right .arrow::before {
+  border-right-color: rgb(81, 81, 81);
+}
+/* FIN TOOLTIP BOOTSTRAP */
+
+
+/* DEBUT TEXTE IMPROVE AMELIORATION */
+.mapbox-improve-map {
+  display: none;
+}
+/* FIN TEXTE IMPROVE AMELIORATION */
+
+/* DEBUT BOUTONS INFORMATIONS */
+#button-informations {
+  position: absolute;
+  top: 90%;
+  left: 1%;
+  background: url('img/info.svg');
+  background-size: contain; 
+  background-size: 105%;
+  background-position: center; 
+  background-repeat: no-repeat;
+  padding: 14px;
+  background-color: rgb(51, 51, 51);
+  border-width: 0px;
+  border-radius: 70px;
+  border-color: #ffffff;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+}
+
+#button-informations:focus {
+  outline: none;
+}
+
+.close:focus {
+  outline: none;
+}
+
+.modal-title {
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 26px;
+  color: rgb(71, 71, 71);
+}
+
+.modal-body-h6{
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 17px;
+  color: rgb(71, 71, 71);
+}
+
+.modal-body-paragraphe {
+  font-family: Roboto;
+  font-weight: medium;
+  font-size: 13px;
+  margin-bottom: 30px;
+  /* color: rgb(71, 71, 71); */
+}
+
+.modal-body-paragraphe-no-margin {
+  font-family: Roboto;
+  font-weight: medium;
+  font-size: 13px;
+}
+/* FIN BOUTONS INFORMATIONS */
+
+/* .button-panel {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  left: 0.4rem;
+  border-radius: 4px; 
+  border: solid 1.5px rgba(134, 134, 134, 0.3); 
+  background: url("img/arrow-left.svg") no-repeat top left;
+  background-size: contain; 
+  background-size: 65%;
+  background-position: center; 
+  background-color: #ffffff;
+  margin: 6px 5px; 
+  cursor: pointer; 
+  z-index: 1;
+}
+
+.button-panel2 {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  left: 0.4rem;
+  border-radius: 4px; 
+  border: solid 1.5px rgba(134, 134, 134, 0.3); 
+  background: url("img/arrow-right.svg") no-repeat top left;
+  background-size: contain; 
+  background-size: 65%;
+  background-position: center; 
+  background-color: #ffffff;
+  margin: 6px 5px; 
+  cursor: pointer; 
+  z-index: 1;
+} */
