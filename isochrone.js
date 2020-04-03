@@ -3,8 +3,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidmljZW50ZTIzIiwiYSI6ImNqZTN6M2xueTY0engyeXAya
 const map = new mapboxgl.Map({
   container: 'map', // container id (déclaré dans le fichier html)
   style: 'mapbox://styles/mapbox/outdoors-v11', // stylesheet location
-  center: [-0.5667, 44.8333], // starting position [lng, lat]
-  zoom: 9, // starting zoom
+  center: [2.6, 46.33], // starting position [lng, lat]
+  zoom: 5, // starting zoom
   minZoom: 2, // zoom minimum
   maxZoom: 24, // zoom maximum
   pitch: 0, // Inclinaison
